@@ -24,5 +24,11 @@ public class Controller {
         return myCoach.getDailyWorkout();
     }
 
+    @GetMapping("/rest/tennisCoach")
+    public String tennisCoach(){
+        System.out.println("hi");
+        return myCoach.getDailyWorkout();
+    }
+
 
 }
