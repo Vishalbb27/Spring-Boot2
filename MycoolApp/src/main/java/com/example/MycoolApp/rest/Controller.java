@@ -1,8 +1,6 @@
 package com.example.MycoolApp.rest;
 
 import com.example.MycoolApp.common.Coach;
-import com.example.MycoolApp.common.CricketCoach;
-import com.example.MycoolApp.common.TennisCoach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
