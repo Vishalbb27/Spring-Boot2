@@ -1,6 +1,7 @@
 package com.example.MycoolApp.hello;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,10 +14,10 @@ public class HelloWorld {
         return hello;
     }
 
-    @GetMapping("/fortune")
-    public Hello FortuneController(){
+    @GetMapping("/fortune/{data}")
+    public Hello FortuneController(@PathVariable("data") String data){
         Hello hello = new Hello();
-        hello.setHello("Fortune favours");
+        hello.setHello(data+"Fortune");
         return hello;
     }
 }

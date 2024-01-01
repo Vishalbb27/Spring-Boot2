@@ -21,19 +21,19 @@ public class MyCoolAppApplication {
 		return runner -> {
 			//createStudent(studentDAO);
 			
-			createMultipleStudent(studentDAO);
+			//createMultipleStudent(studentDAO);
 
-			System.out.println(studentDAO.findById(1));
+			//System.out.println(studentDAO.findById(1));
 
-			System.out.println(studentDAO.findAll());
+			//System.out.println(studentDAO.findAll());
 
-			System.out.println(studentDAO.findByLastName("Doe"));
+			//System.out.println(studentDAO.findByLastName("Doe"));
 
-			updateStudent(studentDAO);
+			//updateStudent(studentDAO);
 
-			deleteStudent(studentDAO);
+			//deleteStudent(studentDAO);
 
-			deleteAllStudents(studentDAO);
+			//deleteAllStudents(studentDAO);
 		};
 	}
 
