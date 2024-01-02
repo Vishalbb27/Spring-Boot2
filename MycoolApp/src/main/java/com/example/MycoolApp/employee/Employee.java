@@ -3,8 +3,8 @@ package com.example.MycoolApp.employee;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="employee")
-public class EmployeeEntity {
+@Table(name="Employee")
+public class Employee {
     //define fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,11 +20,10 @@ public class EmployeeEntity {
     @Column(name="email")
     private String email;
 
-    public EmployeeEntity() {
+    public Employee() {
     }
 
-    public EmployeeEntity(int id, String firstName, String lastName, String email) {
-        this.id = id;
+    public Employee(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -64,7 +63,7 @@ public class EmployeeEntity {
 
     @Override
     public String toString() {
-        return "EmployeeEntity{" +
+        return "Employee{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
