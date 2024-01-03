@@ -1,18 +1,19 @@
-package com.example.MycoolApp.employee;
+package com.example.MycoolApp.springDataJPA;
 
-import com.example.MycoolApp.service.EmployeeService;
+import com.example.MycoolApp.employee.Employee;
+
+import com.example.MycoolApp.student.StudentNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
-@RequestMapping("/api/data")
-public class EmployeeRest {
+@RequestMapping("/api")
 
-    private EmployeeService employeeService;
+public class EmployeeRestController {
+    private EmployeeServiceDataJPA employeeService;
     @Autowired
-    public EmployeeRest(EmployeeService theemployeeService){
+    public EmployeeRestController(EmployeeServiceDataJPA theemployeeService){
         this.employeeService=theemployeeService;
     }
 
@@ -23,6 +24,10 @@ public class EmployeeRest {
 
     @GetMapping("/employees/{empId}")
     public Employee findById(@PathVariable int empId){
+
+        if((empId > employeeService.findAll().size()) || (empId<0) || employeeService.findById(empId) == null){
+            throw  new StudentNotFoundException("Student id not found - "+ empId);
+        }
         return employeeService.findById(empId);
     }
 
