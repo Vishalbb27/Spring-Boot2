@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    function val() {
+    d = document.getElementById("name").value;
+    }
+    </script>
+</head>
+
+<body>
+    <p th:text="'Time on the server is' + ${theDate}" class="funny"/>
+
+    <form th:action="@{/processForm}" method="GET">
+        <label for="name">Name</label>
+        <input id="name" onchange="val()" placeholder="Enter you name" type="text" name="studentname" />
+        <button type="submit">Submit</button>
+    </form>
+
+    <div>
+        Hello World of Spring!
+        Student added to database : <span th:text="${message}"/>
+        <p>List of students :</p>
+        <div th:each="student : ${students}">
+            <h2 th:text="${student}" />
+        </div>
+    </div>
+</body>
+</html>

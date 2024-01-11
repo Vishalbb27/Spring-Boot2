@@ -65,6 +65,11 @@ public class DemoSecurityConfig {
                         .requestMatchers(HttpMethod.POST,"/magic-api/employees").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.PUT,"/magic-api/employees").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.DELETE,"/magic-api/employees/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/thymeleaf/hello").hasRole("EMPLOYEE")
+                        .requestMatchers(HttpMethod.GET,"/showForm").hasRole("EMPLOYEE")
+                        .requestMatchers(HttpMethod.GET,"/processForm/**").hasRole("EMPLOYEE")
+                        .requestMatchers(HttpMethod.GET,"/customer/post").hasRole("EMPLOYEE")
+                        .requestMatchers(HttpMethod.POST,"/customer").hasRole("EMPLOYEE")
         );
 
         //user HTTP Basic authentication
